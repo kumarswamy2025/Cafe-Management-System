@@ -1,5 +1,5 @@
 // importing mysql module
-const mysql=require('mysql');
+const mysql=require('mysql2');
 // configuring dotenv file here because here we using
 require('dotenv').config();
 
@@ -17,11 +17,11 @@ var connection=mysql.createConnection({
 // connecting mysql connection 
 connection.connect((error)=>{
     if(!error){
-        console.log("connected sucess fully...");
+        console.log("connected sucessfully...");
         
     }
     else{
-        console.log(error);
+        console.log("DB ERROR: ",error);
         
     }
 })
