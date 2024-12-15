@@ -5,7 +5,7 @@ var cors=require('cors')
 // importing connectDB file to establish database connection
 const connectDB=require('./connectDB');
 
-// importing user route here
+// importing user route  here
 const userRoute=require('./routes/UserRoute/user');
 
 
@@ -17,7 +17,8 @@ app.use(cors())
 app.use(express.urlencoded({extended:true}))
 // // configuring backend application to accept json data comming  from front end
 app.use(express.json())
-// 
+
+// this is user route start point 
 app.use('/user',userRoute)
 
 
