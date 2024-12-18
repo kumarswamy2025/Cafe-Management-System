@@ -1,0 +1,4 @@
+1. node js 
+2. express js
+3. authentication : JWT TOKENS
+4. mail sending : nodemailer
