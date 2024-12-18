@@ -35,6 +35,17 @@ async function userSignupController(req,res){
         //  executing query
         connectDB.query(checkingExitingUserQuery,[userData.email],(error,result)=>{
 
+             /**
+             * (err, result): A callback function that handles the outcome of the query:
+             * err: Contains an error object if something went wrong during the query execution.
+             * result: Contains the query's output when it executes successfully.
+             * result will be an array of rows matching the query.
+             * If no rows match, result will be an empty array ([]).
+             */
+
+
+            
+       // checking if there is any error 
             if(!error){
                 // checking if email is already exits 
                 if(result.length<=0){
@@ -98,6 +109,7 @@ async function userSignupController(req,res){
             else{
                 return res.status(400).json({
                     message:"error occurs",
+                    success:false,
                     error:error
                 })
             }
