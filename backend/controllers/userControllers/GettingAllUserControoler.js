@@ -8,7 +8,7 @@ async function GettingAllUserController(req,res) {
 
             if(!getAllUserQueryError){
                 return res.status(200).json({
-                    message:"all admin details are sended sucessfully......",
+                    message:"all users details are sended sucessfully......",
                     data:getAllUserQueryResult,
                     success:true,
                     error:false
@@ -16,7 +16,7 @@ async function GettingAllUserController(req,res) {
             }
             else{
                 return res.status(404).json({
-                    message:"there is an error in getting all admin user controller query",
+                    message:"there is an error in getting all  user controller query",
                     dataError:getAllUserQueryError,
                     success:false,
                     error:true
@@ -28,7 +28,7 @@ async function GettingAllUserController(req,res) {
     } catch (error) {
 
          return res.status(404).json({
-                    message:"there is an error in getting all admin user controller ",
+                    message:"there is an error in getting all  user controller ",
                     dataError:getAllUserQueryError,
                     success:false,
                     error:true
