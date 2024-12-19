@@ -2,3 +2,4 @@
 2. express js
 3. authentication : JWT TOKENS
 4. mail sending : nodemailer
+5. mail testing : https://www.mailinator.com/
