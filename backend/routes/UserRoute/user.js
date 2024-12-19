@@ -4,6 +4,7 @@ const UserSignInController = require('../../controllers/userControllers/userSign
 const passwordResetController = require('../../controllers/userControllers/passwardResetController');
 const GettingAllAdminUserController = require('../../controllers/userControllers/GettingAllAdminUserControler');
 const GettingAllUserController = require('../../controllers/userControllers/GettingAllUserControoler');
+const statusController = require('../../controllers/userControllers/statusController');
 
 
 var routes=express.Router();
@@ -25,6 +26,10 @@ routes.get('/adminUsers',GettingAllAdminUserController)
 
 // getting all  users with role=user
 routes.get('/allUsers',GettingAllUserController)
+
+// status update route 
+routes.patch('/updateStatus',statusController)
+
 
 
 module.exports=routes;
