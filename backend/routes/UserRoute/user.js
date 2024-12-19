@@ -16,6 +16,6 @@ routes.post('/login',UserSignInController)
 
 // password reset route
 
-routes.post('/passwordreset',passwordResetController);
+routes.post('/resetPassword',passwordResetController);
 
 module.exports=routes;
