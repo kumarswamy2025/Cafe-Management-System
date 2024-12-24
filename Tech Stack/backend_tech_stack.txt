@@ -3,3 +3,5 @@
 3. authentication : JWT TOKENS
 4. mail sending : nodemailer
 5. mail testing : https://www.mailinator.com/
+6. twilio :used to send sms  (used to send reset password  via sms)
+7. twilio login    :https://www.twilio.com/en-us
