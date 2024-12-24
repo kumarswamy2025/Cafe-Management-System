@@ -62,6 +62,81 @@ const nodemailer = require('nodemailer')
  * 
  */
 
+const twilio = require('twilio');
+
+/*
+ * Twilio is a cloud communications platform that provides APIs for sending SMS, making voice calls, and  interacting with messaging applications like WhatsApp. To use Twilio in a Node.js application,    you'll typically use the Twilio Node.js SDK.
+ 
+  Here's a step-by-step guide to get started with Twilio in Node.js:
+  
+
+ * 1. Install Twilio SDK
+   Install the Twilio Node.js library using npm:  npm install twilio
+
+
+ * 2. Set Up Twilio Account
+   a. Create a Twilio account. (link:https://www.twilio.com/en-us )
+   b. Get your Account SID and Auth Token from the Twilio console.
+   c. Purchase a Twilio phone number (if required).
+
+ * 3. Basic Usage
+   Here’s an example of sending an SMS using Twilio in Node.js:
+
+   Sending an SMS code : 
+    
+   // Import the Twilio SDK
+   const twilio = require('twilio');
+
+   // Twilio credentials (replace with your credentials)
+    const accountSid = 'your_account_sid'; // Your Account SID from Twilio
+    const authToken = 'your_auth_token';   // Your Auth Token from Twilio
+
+   // Initialize the Twilio client
+    const client = twilio(accountSid, authToken);
+
+   // Send an SMS
+   client.messages
+   .create({
+    body: 'Hello, this is a message from Twilio!', // Message content
+    from: '+1234567890', // Your Twilio phone number
+    to: '+0987654321',   // Recipient's phone number
+   })
+   .then(message => console.log(`Message sent with SID: ${message.sid}`))
+   .catch(error => console.error('Error sending message:', error));
+
+
+
+
+
+ *  Sending a WhatsApp Message :
+     To send a message on WhatsApp, use a Twilio WhatsApp-enabled number:   
+      
+     client.messages
+     .create({
+     body: 'Hello from Twilio via WhatsApp!',
+     from: 'whatsapp:+14155238886', // Twilio WhatsApp sandbox number
+     to: 'whatsapp:+recipient_number', // Recipient's WhatsApp number
+    })
+    .then(message => console.log(`WhatsApp message sent with SID: ${message.sid}`))
+    .catch(error => console.error('Error sending WhatsApp message:', error));
+
+
+ * Making a Voice Call: 
+     To make a voice call, use the following:
+
+      client.calls
+      .create({
+       url: 'http://demo.twilio.com/docs/voice.xml', // TwiML URL
+       to: '+0987654321', // Recipient's phone number
+       from: '+1234567890', // Your Twilio phone number
+      })
+    .then(call => console.log(`Call initiated with SID: ${call.sid}`))
+    .catch(error => console.error('Error making call:', error));
+
+ *   
+
+*/
+
 
 // configuring dot env file here
 require('dotenv').config()
@@ -73,6 +148,50 @@ const crypto = require('crypto');
 
 
 
+// this is fucntion is used to send reset password via SMS
+async function sendSMS(toPhoNumber,email,resetedPassword) {
+
+    // Twilio credentials (replace with your credentials)
+    const accountSid = process.env.TWILIO_ACCOUNT_SID // Your Account SID from Twilio
+    const authToken = process.env.TWILIO_AUTH_TOKEN   // Your Auth Token from Twilio
+
+    // Initialize the Twilio client
+    const client = twilio(accountSid, authToken);
+
+
+
+  
+
+ 
+    //  message options 
+    let SMSOptions={
+        body: `Password Reset Link for Cafe Management System \n email:${email} \n password : ${resetedPassword} \n website link: ${process.env.FRONTEND_URL}
+        
+        `, // Message content
+        from: process.env.TWILIO_PHONE_NUMBER, // Your Twilio phone number
+        to: toPhoNumber,   // Recipient's phone number
+      }
+
+  try {
+      // Send an SMS
+     let sendedMessage=await client.messages.create(SMSOptions);
+     console.log("the sended message : ",sendedMessage);
+     
+    
+  } catch (error) {
+    console.log("there is an error in sendSMS function :",error);
+    
+    
+  }
+
+
+
+
+
+
+
+}
+
 
 async function passwordResetController(req, res) {
     try {
@@ -82,7 +201,7 @@ async function passwordResetController(req, res) {
 
 
         //    query for  fetching user details(email, password) from DB 
-        const findUserExitQuery = "select email,password from user where email=?";
+        const findUserExitQuery = "select email,password, contactnumber from user where email=?";
 
         connectDB.query(findUserExitQuery, [userData.email], (queryError, QueryResult) => {
             // cheching user is exits or not 
@@ -113,7 +232,7 @@ async function passwordResetController(req, res) {
 
                     if (!passwordResetQueryError) {
                         // console.log("passowrd reset result:"+JSON.stringify(passwordResetQueryResult));
-                        
+
 
                     }
                     else {
@@ -141,11 +260,6 @@ async function passwordResetController(req, res) {
                 })
 
 
-
-
-
-
-
                 const mailOptions = {
                     from: process.env.EMAIL, // Sender's email from environment variables
                     to: QueryResult[0].email, // Recipient's email from the database query
@@ -159,29 +273,35 @@ async function passwordResetController(req, res) {
                 };
 
 
-                transpoter.sendMail(mailOptions,(sendMailError,sendMailResult)=>{
+                transpoter.sendMail(mailOptions, (sendMailError, sendMailResult) => {
 
-                    if(sendMailError){
+                    if (sendMailError) {
                         console.log("there is error in sendMail method:", sendMailError);
 
                         return res.status(500).json({
                             message: "there is error in sendMail method",
                             success: false,
                             error: true
-                        }) 
-                        
+                        })
+
                     }
-                    else{
+                    else {
                         // console.log("the mail is sended successfully.... ");
                         // console.log("email response : ", sendMailResult);
+
+
+                        // calling send SMS function
+
+                         sendSMS("+91"+QueryResult[0].contactnumber,QueryResult[0].email,randomPassword)
+
                         return res.status(201).json({
-                            message: "the mail is sended successfully.... ",
+                            message: "The reset password is sended to registered Email id  and Phone Number",
                             success: true,
                             error: false,
-                            data:sendMailResult
+                            data: sendMailResult
                         })
-                        
-                        
+
+
                     }
 
                 })
