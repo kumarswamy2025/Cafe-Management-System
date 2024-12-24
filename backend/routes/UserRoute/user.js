@@ -5,6 +5,7 @@ const passwordResetController = require('../../controllers/userControllers/passw
 const GettingAllAdminUserController = require('../../controllers/userControllers/GettingAllAdminUserControler');
 const GettingAllUserController = require('../../controllers/userControllers/GettingAllUserControoler');
 const statusController = require('../../controllers/userControllers/statusController');
+const authenticateToken = require('../../services/authenticateToken');
 
 
 var routes=express.Router();
@@ -19,16 +20,19 @@ routes.post('/login',UserSignInController)
 
 // password reset route
 
-routes.post('/resetPassword',passwordResetController);
+routes.post('/resetPassword',authenticateToken,passwordResetController);
 
 // getting all  users with role=admin
-routes.get('/adminUsers',GettingAllAdminUserController)
+routes.get('/adminUsers',authenticateToken,GettingAllAdminUserController)
 
 // getting all  users with role=user
-routes.get('/allUsers',GettingAllUserController)
+routes.get('/allUsers',authenticateToken,GettingAllUserController)
 
 // status update route 
-routes.patch('/updateStatus',statusController)
+routes.patch('/updateStatus',authenticateToken,statusController)
+
+//verifying token  route 
+routes.get('/checkToken',authenticateToken);
 
 
 
