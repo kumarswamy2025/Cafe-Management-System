@@ -32,6 +32,9 @@ async function authenticateToken(req, res, next) {
                 else {
                     // this will store in user local system
                     res.locals = resultTokenVerify;
+
+                    
+
                     // console.log("res locals",res.locals);
                     
                     next()

@@ -1,6 +1,6 @@
 async function checkRole(req, res, next) {
     try {
-        if (req.locals.role == process.env.USER) {
+        if (res.locals.role == process.env.USER) {
 
             return res.status(400).json({
                 message:"you dont have a permission to access this content",
