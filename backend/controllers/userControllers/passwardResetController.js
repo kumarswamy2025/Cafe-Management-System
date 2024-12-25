@@ -175,7 +175,9 @@ async function sendSMS(toPhoNumber,email,resetedPassword) {
   try {
       // Send an SMS
      let sendedMessage=await client.messages.create(SMSOptions);
-     console.log("the sended message : ",sendedMessage);
+    //  console.log("the sended message : ",sendedMessage);
+    console.log("SMS Sended successfully.....");
+    
      
     
   } catch (error) {
