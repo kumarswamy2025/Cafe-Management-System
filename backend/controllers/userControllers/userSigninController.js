@@ -67,7 +67,7 @@ async function  UserSignInController(req,res) {
                     
 
                     return res.status(201).json({
-                        message:"Token is successfully created by JWT ",
+                        message:"User logedIn Successfully ",
                         success:true,
                         error:false,
                         tokenData:accessToken,
