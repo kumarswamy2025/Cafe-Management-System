@@ -1,3 +1,6 @@
+-- DB_NAME: cafe_management_db
+
+
 -- creating user table 
 
 CREATE TABLE user(
@@ -19,3 +22,16 @@ CREATE TABLE user(
 
 INSERT INTO user(name,contactnumber,email,password,status,role) values('Admin','123456789','admin@gmail.com','admin','true','admin');
 
+
+
+-- creating category table
+
+CREATE TABLE category(
+
+    id int not NULL AUTO_INCREMENT,
+    name varchar(250) not NULL,
+    primary key(id)
+    
+    )
+
+ 
