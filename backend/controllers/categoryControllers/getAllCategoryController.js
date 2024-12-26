@@ -13,7 +13,7 @@ async function getAllCategoryController(req,res) {
 
             if(!getAllCategoryControllerQueryError){
 
-                return res.status(400).json({
+                return res.status(200).json({
                     message:"all categories fetched success fully ",
                     success:true,
                     error:false,
