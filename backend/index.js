@@ -9,6 +9,10 @@ const connectDB=require('./connectDB');
 const userRoute=require('./routes/UserRoute/user');
 
 
+// importing category route 
+const categoryRoute=require('./routes/CategoryRoute/Category')
+
+
 // assigninng the express  variable (it contains alll the express module) to app variable
 const app=express()
 // configuring cors with backend application
@@ -20,6 +24,10 @@ app.use(express.json())
 
 // this is user route start point 
 app.use('/user',userRoute)
+
+// this is catregory route 
+app.use('/category',categoryRoute)
+
 
 
 
