@@ -7,7 +7,7 @@ async function getAllCategoryController(req,res) {
 
         const getAllCategoryControllerQuery="select *  from  category  order by name "
 
-        connectDB.query(getAllCategoryControllerQuery,(getAllCategoryControllerQueryError,getAllCategoryControllerQueryResult)=>{
+         connectDB.query(getAllCategoryControllerQuery,(getAllCategoryControllerQueryError,getAllCategoryControllerQueryResult)=>{
 
 
 
@@ -18,6 +18,7 @@ async function getAllCategoryController(req,res) {
                     success:true,
                     error:false,
                     SuccessData:getAllCategoryControllerQueryResult
+                    
                 })
 
             }
@@ -35,6 +36,13 @@ async function getAllCategoryController(req,res) {
 
 
     } catch (error) {
+
+        return res.status(400).json({
+            message:"there is an error in get All Category Controller",
+            success:false,
+            error:true,
+            errorData:getAllCategoryControllerQueryError
+        })
         
     }
     
