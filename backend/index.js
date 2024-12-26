@@ -12,6 +12,8 @@ const userRoute=require('./routes/UserRoute/user');
 // importing category route 
 const categoryRoute=require('./routes/CategoryRoute/Category')
 
+// importing product route
+const productRoute=require('./routes/productsRoute/product')
 
 // assigninng the express  variable (it contains alll the express module) to app variable
 const app=express()
@@ -28,8 +30,8 @@ app.use('/user',userRoute)
 // this is catregory route 
 app.use('/category',categoryRoute)
 
-
-
+// this is product route 
+app.use('/product',productRoute)
 
 
 
