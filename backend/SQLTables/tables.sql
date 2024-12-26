@@ -34,4 +34,17 @@ CREATE TABLE category(
     
     )
 
- 
+--  creating products table 
+
+
+CREATE table product(
+
+    id int not NULL AUTO_INCREMENT,
+    name varchar(255) not NULL,
+    categoryId int not NULL ,
+    description varchar(255) not NULL,
+    price int not null,
+    status varchar(255),
+    primary key (id)
+
+)
