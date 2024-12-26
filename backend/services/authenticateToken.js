@@ -31,6 +31,7 @@ async function authenticateToken(req, res, next) {
                 }
                 else {
                     // this will store in user local system
+                    // Note: locals is not predefined name you can add your name also
                     res.locals = resultTokenVerify;
 
                     
