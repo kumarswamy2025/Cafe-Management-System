@@ -8,6 +8,7 @@ const authenticateToken = require('../../services/authenticateToken');
 const addProductController = require('../../controllers/productController/addProductController');
 const getProductController = require('../../controllers/productController/getProductController');
 const getProductsByCategoryId = require('../../controllers/productController/getProductsByCategoryId');
+const getProductsByProductsId = require('../../controllers/productController/getProductsByProductsId');
 
 
 // add product controller 
@@ -18,8 +19,8 @@ routes.get('/getProduct',getProductController);
 
 // get products by products  category id 
 routes.get('/getProductsByCategoryId/:productsCategoryId',getProductsByCategoryId)
-
-
+// get products by product id 
+routes.get('/getProductsByProductId/:productId',getProductsByProductsId)
 
 
 
