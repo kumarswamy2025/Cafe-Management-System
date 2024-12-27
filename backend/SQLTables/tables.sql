@@ -48,3 +48,22 @@ CREATE table product(
     primary key (id)
 
 )
+
+
+-- creating bill table
+
+CREATE table bill(
+    id int not null AUTO_INCREMENT  ,
+    uuid varchar(200) not null,
+    name varchar(250) not null,
+    email varchar(250) not null,
+    contactnumber varchar(50) not null,
+    paymentMethod varchar(50) not null,
+    total int not null,
+    productDetails json default null,
+    createdBy varchar(255) not null ,
+    primary key (id)
+
+
+
+)
