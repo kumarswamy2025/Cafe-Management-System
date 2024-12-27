@@ -6,6 +6,9 @@ async function getProductController(req,res) {
      
         
             // inner join the product table and category table 
+            // this query is used to get products by category wise by comparing  p.categoryId with c.id
+            // p is products
+            //c is category 
         const getProductsQuery="select p.id,p.name, p.description, p.price , c.id as categoryId , c.name as categoryName from product as p inner join category as c  where p.categoryId=c.id";
 
         connectDB.query(getProductsQuery,(getProductsQueryError,getProductsQueryResult)=>{
