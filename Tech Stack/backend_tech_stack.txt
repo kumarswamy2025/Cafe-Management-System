@@ -5,3 +5,7 @@
 5. mail testing : https://www.mailinator.com/
 6. twilio :used to send sms  (used to send reset password  via sms)
 7. twilio login    :https://www.twilio.com/en-us
+8. ejs ==> EJS is a templating language that allows you to embed JavaScript into your HTML. It is used to create dynamic web pages by integrating data directly into HTML templates.
+9. html-pdf ==> This package converts HTML content into PDF format. It’s useful for generating downloadable or printable PDF documents from web content.
+10. uuid ==> Generates unique identifiers. These IDs are universally unique, making them ideal for scenarios like database records, tokens, or filenames.
+11. 
