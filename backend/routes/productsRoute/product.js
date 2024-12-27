@@ -9,6 +9,7 @@ const addProductController = require('../../controllers/productController/addPro
 const getProductController = require('../../controllers/productController/getProductController');
 const getProductsByCategoryId = require('../../controllers/productController/getProductsByCategoryId');
 const getProductsByProductsId = require('../../controllers/productController/getProductsByProductsId');
+const updateProductsController = require('../../controllers/productController/updateProductsController');
 
 
 // add product controller 
@@ -22,7 +23,8 @@ routes.get('/getProductsByCategoryId/:productsCategoryId',getProductsByCategoryI
 // get products by product id 
 routes.get('/getProductsByProductId/:productId',getProductsByProductsId)
 
-
+// update product
+routes.patch('/updateProduct',updateProductsController)
 
 
 
