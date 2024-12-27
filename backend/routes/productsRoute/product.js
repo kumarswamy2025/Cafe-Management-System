@@ -10,6 +10,7 @@ const getProductController = require('../../controllers/productController/getPro
 const getProductsByCategoryId = require('../../controllers/productController/getProductsByCategoryId');
 const getProductsByProductsId = require('../../controllers/productController/getProductsByProductsId');
 const updateProductsController = require('../../controllers/productController/updateProductsController');
+const deleteProductController = require('../../controllers/productController/deleteProductController');
 
 
 // add product controller 
@@ -26,7 +27,8 @@ routes.get('/getProductsByProductId/:productId',getProductsByProductsId)
 // update product
 routes.patch('/updateProduct',updateProductsController)
 
-
+// delete product by id 
+routes.delete('/deleteProduct/:productId', deleteProductController)
 
 
 module.exports=routes
