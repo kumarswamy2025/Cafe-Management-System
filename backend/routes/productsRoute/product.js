@@ -7,6 +7,7 @@ const checkRole= require('../../services/checkRole')
 const authenticateToken = require('../../services/authenticateToken');
 const addProductController = require('../../controllers/productController/addProductController');
 const getProductController = require('../../controllers/productController/getProductController');
+const getProductsByCategoryId = require('../../controllers/productController/getProductsByCategoryId');
 
 
 // add product controller 
@@ -14,6 +15,12 @@ routes.post('/addProduct',addProductController);
 
 // get products 
 routes.get('/getProduct',getProductController);
+
+// get products by products  category id 
+routes.get('/getProductsByCategoryId/:productsCategoryId',getProductsByCategoryId)
+
+
+
 
 
 
