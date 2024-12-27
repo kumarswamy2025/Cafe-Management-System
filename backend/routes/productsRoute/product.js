@@ -6,10 +6,16 @@ const routes=express.Router()
 const checkRole= require('../../services/checkRole')
 const authenticateToken = require('../../services/authenticateToken');
 const addProductController = require('../../controllers/productController/addProductController');
+const getProductController = require('../../controllers/productController/getProductController');
 
 
 // add product controller 
 routes.post('/addProduct',addProductController);
+
+// get products 
+routes.get('/getProduct',getProductController);
+
+
 
 
 
