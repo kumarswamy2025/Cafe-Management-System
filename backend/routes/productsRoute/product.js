@@ -15,23 +15,23 @@ const updateProductStatusController = require('../../controllers/productControll
 
 
 // add product controller 
-routes.post('/addProduct',addProductController);
+routes.post('/addProduct',authenticateToken,addProductController);
 
 // get products 
-routes.get('/getProduct',getProductController);
+routes.get('/getProduct',authenticateToken,getProductController);
 
 // get products by products  category id 
-routes.get('/getProductsByCategoryId/:productsCategoryId',getProductsByCategoryId)
+routes.get('/getProductsByCategoryId/:productsCategoryId',authenticateToken,getProductsByCategoryId)
 // get products by product id 
-routes.get('/getProductsByProductId/:productId',getProductsByProductsId)
+routes.get('/getProductsByProductId/:productId',authenticateToken,getProductsByProductsId)
 
 // update product
-routes.patch('/updateProduct',updateProductsController)
+routes.patch('/updateProduct',authenticateToken,updateProductsController)
 
 // delete product by id 
-routes.delete('/deleteProduct/:productId', deleteProductController)
+routes.delete('/deleteProduct/:productId',authenticateToken, deleteProductController)
 
 // update product status
-routes.patch('/updateStatus',updateProductStatusController)
+routes.patch('/updateStatus',authenticateToken,updateProductStatusController)
 
 module.exports=routes
