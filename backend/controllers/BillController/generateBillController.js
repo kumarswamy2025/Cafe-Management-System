@@ -59,7 +59,7 @@ async function generateBillController(req, res) {
                     (err, results) => {
                         if (err) {
                             return res.status(400).json({
-                                message: "there is an error  in the ejs.render file please check once ",
+                                message: "there is an error  in the ejs.render file method  please check once ",
                                 success: false,
                                 error: true,
                                 errorData: err
@@ -75,7 +75,7 @@ async function generateBillController(req, res) {
                                     "./controllers/BillController/generated_PDF/" + generatedUUID + ".pdf",
                                     (err, data) => {
                                         if (err) {
-                                            console.log(err);
+                                            // console.log(err);
                                             return res.status(500).json({
                                                 message: "there is an error  in the pdf creation  please check once ",
                                                 success: false,
