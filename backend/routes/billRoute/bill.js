@@ -21,7 +21,7 @@ route.get('/getAllBills',authenticateToken,getAllBillsController)
 route.delete('/deleteBill/:id',authenticateToken,deleteBillByIDController)
 
 // view bill by id
-route.get('/viewBill/:id',viewBillByIdController)
+route.get('/viewBill/:id',authenticateToken,viewBillByIdController)
 
 
 
