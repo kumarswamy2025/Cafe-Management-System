@@ -15,6 +15,8 @@ const categoryRoute=require('./routes/CategoryRoute/Category')
 // importing product route
 const productRoute=require('./routes/productsRoute/product')
 
+// importing bill route 
+const billRoute=require('./routes/billRoute/bill')
 // assigninng the express  variable (it contains alll the express module) to app variable
 const app=express()
 // configuring cors with backend application
@@ -33,7 +35,8 @@ app.use('/category',categoryRoute)
 // this is product route 
 app.use('/product',productRoute)
 
-
+// bill route 
+app.use('/bill',billRoute);
 
 // exporting app variable 
 module.exports=app;
