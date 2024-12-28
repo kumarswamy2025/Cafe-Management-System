@@ -37,7 +37,7 @@ async function getPdfController(req, res) {
                     productDetails: productDetailsReport,
                     name: orderDetails.name,
                     email: orderDetails.email,
-                    contactNumber: orderDetails.contactNumber,
+                    contactNumber: orderDetails.contactnumber,
                     paymentMethod: orderDetails.paymentMethod,
                     totalAmount: orderDetails.total,
                 },

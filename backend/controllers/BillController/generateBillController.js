@@ -33,11 +33,11 @@ async function generateBillController(req, res) {
         // parsing json data comming from frontend 
         let productDetailsReport = JSON.parse(orderDetails.productDetails);
         // query to save order details in bill table 
-        let saveOrderDetailsQuery = "insert into bill (name, uuid, email, contactNumber, paymentMethod, total, productDetails, createdBy) values(?,?,?,?,?,?,?,?)";
+        let saveOrderDetailsQuery = "insert into bill (name, uuid, email, contactnumber, paymentMethod, total, productDetails, createdBy) values(?,?,?,?,?,?,?,?)";
         connectDB.query(saveOrderDetailsQuery, [orderDetails.name,
             generatedUUID,
         orderDetails.email,
-        orderDetails.contactNumber,
+        orderDetails.contactnumber,
         orderDetails.paymentMethod,
         orderDetails.total,
         orderDetails.productDetails,
@@ -52,7 +52,7 @@ async function generateBillController(req, res) {
                         productDetails: productDetailsReport,
                         name: orderDetails.name,
                         email: orderDetails.email,
-                        contactNumber: orderDetails.contactNumber,
+                        contactNumber: orderDetails.contactnumber,
                         paymentMethod: orderDetails.paymentMethod,
                         totalAmount: orderDetails.total,
                     },
