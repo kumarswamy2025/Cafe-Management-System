@@ -1,0 +1,2 @@
+1. Angular ==> ui framework 
+2. snackbar==>  used in web or mobile development to display short messages or notifications to users
