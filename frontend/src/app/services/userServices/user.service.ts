@@ -21,6 +21,10 @@ export class UserService {
       headers:new HttpHeaders().set('content-type','application/json')
     })
    }
+  //  forgot password
+  forgotPassword(data:any){
+    
+  }
 
 
 

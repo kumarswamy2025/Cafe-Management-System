@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
     const dialogConfiguration=new MatDialogConfig();
     dialogConfiguration.width="550px";
     this.dialog.open(SignupComponent,dialogConfiguration)
+    
+    
 
     // console.log("clicked here ");
     

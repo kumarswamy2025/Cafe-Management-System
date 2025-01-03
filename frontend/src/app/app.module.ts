@@ -46,8 +46,8 @@ const ngx_ui_loader_config: NgxUiLoaderConfig = {
     FullComponent,
     AppHeaderComponent,
     AppSidebarComponent,
-    SignupComponent
-  ],
+    SignupComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -58,7 +58,7 @@ const ngx_ui_loader_config: NgxUiLoaderConfig = {
     FlexLayoutModule,
     SharedModule,
     HttpClientModule,
-   
+    
     NgxUiLoaderModule.forRoot(ngx_ui_loader_config)
 
   ],
