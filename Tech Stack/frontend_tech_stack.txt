@@ -1,2 +1,4 @@
 1. Angular ==> ui framework 
 2. snackbar==>  used in web or mobile development to display short messages or notifications to users
+3. Angular Material ui ==> Angular Material UI is a user interface library for Angular that provides a set of reusable, high-quality, and accessible UI components. It follows Google’s Material Design guidelines, offering consistent design and interaction patterns for Angular applications.
+4. ngx-ui-loader==> The ngx-ui-loader library is an Angular loader/spinner component that you can use to display loading indicators while performing asynchronous operations such as HTTP requests.
