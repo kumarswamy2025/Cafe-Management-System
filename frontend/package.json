@@ -4,8 +4,6 @@
   "scripts": {
     "ng": "ng",
     "start": "node --openssl-legacy-provider ./node_modules/@angular/cli/bin/ng serve --o",
-
-    
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
