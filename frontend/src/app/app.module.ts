@@ -15,8 +15,31 @@ import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import {
+  NgxUiLoaderConfig,
+  NgxUiLoaderModule,
+  PB_DIRECTION,
+  SPINNER,
+} from 'ngx-ui-loader'
+
+
+
+
+const ngx_ui_loader_config: NgxUiLoaderConfig = {
+  text: 'Loading...',
+  textColor: '#FFFFFF',
+  textPosition: 'center-center',
+  pbColor: 'red',
+  bgsColor: 'red',
+  fgsColor: 'red',
+  fgsType: SPINNER.chasingDots,
+  fgsSize: 100,
+  pbDirection: PB_DIRECTION.leftToRight,
+  pbThickness: 5,
+};
+
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     HomeComponent,
     BestSellerComponent,
@@ -24,7 +47,7 @@ import { SignupComponent } from './signup/signup.component';
     AppHeaderComponent,
     AppSidebarComponent,
     SignupComponent
-   ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,7 +57,10 @@ import { SignupComponent } from './signup/signup.component';
     MaterialModule,
     FlexLayoutModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    NgxUiLoaderModule.forRoot(ngx_ui_loader_config)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
