@@ -21,9 +21,15 @@ export class UserService {
       headers:new HttpHeaders().set('content-type','application/json')
     })
    }
-  //  forgot password
+   
+  //  forgot password service
   forgotPassword(data:any){
-    
+
+    return this.http.post(this.user_API.passwordReset_API.API,data,{
+
+      headers:new HttpHeaders().set('content-type','application/json')
+
+    })
   }
 
 
