@@ -21,7 +21,7 @@ routes.post('/login',UserSignInController)
 
 // password reset route
 
-routes.post('/resetPassword',authenticateToken,passwordResetController);
+routes.post('/resetPassword',passwordResetController);
 
 // getting all  users with role=admin
 routes.get('/adminUsers',authenticateToken,GettingAllAdminUserController)
