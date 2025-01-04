@@ -5,6 +5,7 @@ import { FullComponent } from './layouts/full/full.component';
 import { RouterGuadeService } from './services/routerGuard/router-guade.service';
 
 const routes: Routes = [
+  
   { path: '', component: HomeComponent },
   {
     path: 'cafe',

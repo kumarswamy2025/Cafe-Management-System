@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         // console.log("local storeage before setup",localStorage);
 
 
-         console.log("session stoarge before setup",sessionStorage);
+        //  console.log("session stoarge before setup",sessionStorage);
 
         
         // displaying user login message 

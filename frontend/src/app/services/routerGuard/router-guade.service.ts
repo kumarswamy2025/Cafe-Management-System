@@ -47,6 +47,10 @@ export class RouterGuadeService {
       tokenPlayLoad = jwtDecode(token)
     } catch (error) {
       
+      const response="please login "
+      this.snackBarService.openSnackBar(response, GlobalConstants.error)
+      console.log("this is executed..");
+      
       localStorage.clear();
       this.router.navigate(['/'])
 
@@ -69,6 +73,8 @@ export class RouterGuadeService {
 
         this.snackBarService.openSnackBar(GlobalConstants.unauthorized, GlobalConstants.error);
         this.router.navigate(['/cafe/dashboard'])
+        // this.router.navigate(['/'])
+
         return false
 
       }

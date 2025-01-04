@@ -28,6 +28,7 @@ export var Apis = {
         },
         check_token: {
             API: `${domain}user/checkToken`
+            
         }
 
 

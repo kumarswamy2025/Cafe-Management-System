@@ -23,10 +23,14 @@ export class HomeComponent implements OnInit {
 
     if(localStorage.getItem('token')!=null){
       this.userService.token().subscribe((response:any)=>{
+        // console.log("this is executed1");
+        
         this.route.navigate(['/cafe/dashboard'])
 
       },(error:any)=>{
         console.log(error);
+
+        // console.log("this is executed1");
         
 
       })
