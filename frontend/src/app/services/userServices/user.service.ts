@@ -9,7 +9,7 @@ import {Apis} from '../../Api_urls/Api_urls';
 export class UserService {
   // api importing 
    user_API=Apis.user_Api
-   dashBoard_Api=Apis.dashBoard_API
+   
 
 
 
@@ -38,6 +38,11 @@ export class UserService {
 
       headers:new HttpHeaders().set('content-type','application/json')
     })
+  }
+  // check token service
+
+  token(){
+    return this.http.get(this.user_API.check_token.API)
   }
 
 

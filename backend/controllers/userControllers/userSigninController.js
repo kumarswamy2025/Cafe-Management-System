@@ -42,7 +42,7 @@ async function UserSignInController(req, res) {
                 }
                 // checking password is correct or not
                 else if (result[0].password != userData.password) {
-                    return res.status(500).json({
+                    return res.status(401).json({
                         message: "entered password is not correct please enter the correct password",
                         success: false,
                         error: true

@@ -2,10 +2,10 @@ const domain = "http://localhost:8080/"
 export var Apis = {
 
     user_Api: {
-        
+
         signUp_API: {
             API: `${domain}user/signup`,
-           
+
         },
         passwordReset_API: {
             API: `${domain}user/resetPassword`
@@ -25,12 +25,19 @@ export var Apis = {
         },
         updatePassword_API: {
             API: `${domain}user/updatePassword`
+        },
+        check_token: {
+            API: `${domain}user/checkToken`
         }
 
 
 
     },
     dashBoard_API: {
+
+        dashboard_details: {
+            API: `${domain}dashboard/dashboardDetails`
+        }
 
     }
 

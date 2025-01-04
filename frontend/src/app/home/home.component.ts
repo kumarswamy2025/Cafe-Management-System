@@ -3,6 +3,8 @@ import { MatDialog, MatDialogClose, MatDialogConfig } from '@angular/material/di
 import { SignupComponent } from '../signup/signup.component';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { LoginComponent } from '../login/login.component';
+import { UserService } from '../services/userServices/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +13,25 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog:MatDialog,
+    private userService:UserService,
+    private route:Router
+    
+  ) { }
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('token')!=null){
+      this.userService.token().subscribe((response:any)=>{
+        this.route.navigate(['/cafe/dashboard'])
+
+      },(error:any)=>{
+        console.log(error);
+        
+
+      })
+
+    }
   }
 
   signupAction(){
