@@ -21,7 +21,8 @@ import {
   PB_DIRECTION,
   SPINNER,
 } from 'ngx-ui-loader';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginComponent } from './login/login.component'
 
 
 
@@ -49,6 +50,7 @@ const ngx_ui_loader_config: NgxUiLoaderConfig = {
     AppSidebarComponent,
     SignupComponent,
     ForgotPasswordComponent,
+    LoginComponent,
    ],
   imports: [
     BrowserModule,

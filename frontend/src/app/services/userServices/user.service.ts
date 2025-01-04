@@ -32,6 +32,14 @@ export class UserService {
     })
   }
 
+  // login service
+  login(data:any){
+    return this.http.post(this.user_API.login_API.API,data,{
+
+      headers:new HttpHeaders().set('content-type','application/json')
+    })
+  }
+
 
 
 }

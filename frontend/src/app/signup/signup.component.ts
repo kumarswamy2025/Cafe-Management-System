@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
       ],
       password: [
         null,
-        [Validators.required]
+        [Validators.required,Validators.minLength(7)]
       ],
 
     })
