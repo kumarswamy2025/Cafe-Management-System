@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     if(localStorage.getItem('token')!=null){
       this.userService.token().subscribe((response:any)=>{
         // console.log("this is executed1");
+        console.log("this isn home component:",response);
         
         this.route.navigate(['/cafe/dashboard'])
 

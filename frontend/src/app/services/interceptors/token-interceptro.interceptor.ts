@@ -19,13 +19,13 @@ export class TokenInterceptroInterceptor implements HttpInterceptor {
     const token=localStorage.getItem('token');
       
     if(token){
-      console.log("token is  there ");
+      // console.log("token is  there ");
      request= request.clone({
         setHeaders:{Authorization:`Bearer ${token}` }
       })
     }
     else{
-      console.log("token is not there ");
+      // console.log("token is not there ");
       
     }
 
