@@ -24,6 +24,7 @@ import {
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component'
 import { TokenInterceptroInterceptor } from './services/interceptors/token-interceptro.interceptor';
+import { AccordionLinkDirective } from './shared/accordion';
 
 
 
@@ -52,6 +53,7 @@ const ngx_ui_loader_config: NgxUiLoaderConfig = {
     SignupComponent,
     ForgotPasswordComponent,
     LoginComponent,
+    
    ],
   imports: [
     BrowserModule,
@@ -67,7 +69,7 @@ const ngx_ui_loader_config: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngx_ui_loader_config)
 
   ],
-  providers: [HttpClientModule,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptroInterceptor,multi:true}],
+  providers: [HttpClientModule,AccordionLinkDirective ,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptroInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
