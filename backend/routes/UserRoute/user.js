@@ -7,6 +7,7 @@ const GettingAllUserController = require('../../controllers/userControllers/Gett
 const statusController = require('../../controllers/userControllers/statusController');
 const authenticateToken = require('../../services/authenticateToken');
 const passwordChangeController = require('../../controllers/userControllers/passwordChangeController');
+const checkTokenController = require('../../controllers/userControllers/checkTokenController');
 
 
 var routes=express.Router();
@@ -33,7 +34,7 @@ routes.get('/allUsers',authenticateToken,GettingAllUserController)
 routes.patch('/updateStatus',authenticateToken,statusController)
 
 //verifying token  route 
-routes.get('/checkToken',authenticateToken);
+routes.get('/checkToken',authenticateToken,checkTokenController);
 
 // password change controller 
 routes.post("/updatePassword",authenticateToken,passwordChangeController)

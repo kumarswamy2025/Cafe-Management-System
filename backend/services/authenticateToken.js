@@ -39,11 +39,11 @@ async function authenticateToken(req, res, next) {
                     // console.log("res locals",res.locals);
                     
                     //  next()
-                     res.status(201).json({
-                        message: "user login successfully",
-                        success: true,
-                        error: false
-                    })
+                    //  res.status(201).json({
+                    //     message: "user login successfully",
+                    //     success: true,
+                    //     error: false
+                    // })
                     next()
                   
 
