@@ -45,6 +45,17 @@ export class UserService {
     return this.http.get(this.user_API.check_token.API)
   }
 
+  // change password
+  changePassword(data:any){
+
+    return this.http.post(this.user_API.passwordReset_API.API,data,{
+
+      headers:new HttpHeaders().set('content-type','application/json')
+
+    })
+
+  }
+
 
 
 }
