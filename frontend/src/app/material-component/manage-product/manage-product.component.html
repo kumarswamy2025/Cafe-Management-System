@@ -62,7 +62,7 @@
           >
             <mat-icon>delete</mat-icon>
           </button>
-  
+          
           <mat-slide-toggle
             (change)="onChange($event.checked, element.id)"
             color="primary"
@@ -71,6 +71,8 @@
           >
           <!-- {{ element.status ? 'Activate' : 'Deactivate' }} -->
           </mat-slide-toggle>
+          
+
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
