@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import {Apis} from '../../Api_urls/Api_urls';
+import { Apis } from '../../Api_urls/Api_urls';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +24,7 @@ export class UserService {
   //  forgot password service
   forgotPassword(data:any){
 
-    return this.http.post(this.user_API.passwordReset_API.API,data,{
+    return this.http.post(this.user_API.updatePassword_API.API,data,{
 
       headers:new HttpHeaders().set('content-type','application/json')
 
@@ -48,7 +47,7 @@ export class UserService {
   // change password
   changePassword(data:any){
 
-    return this.http.post(this.user_API.passwordReset_API.API,data,{
+    return this.http.post(this.user_API.updatePassword_API.API,data,{
 
       headers:new HttpHeaders().set('content-type','application/json')
 
