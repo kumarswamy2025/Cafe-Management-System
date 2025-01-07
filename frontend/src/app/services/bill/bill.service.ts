@@ -29,17 +29,17 @@ export class BillService {
 
   // get all bills service
   getAllBills() {
-    return this.http.get(this.bill_API.generateBillPDF.API)
+    return this.http.get(this.bill_API.getAllBills.API)
 
   }
   // delete bill by id service
   deleteBill(id:any) {
-    return this.http.delete(this.bill_API.generateBillPDF.API+id)
+    return this.http.delete(this.bill_API.deleteBill.API+id)
 
   }
   // view bill by id service
   viewBill(id:any) {
-    return this.http.get(this.bill_API.generateBillPDF.API+id)
+    return this.http.get(this.bill_API.viewBill.API+id)
 
 
   }
