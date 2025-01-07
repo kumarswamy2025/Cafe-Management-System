@@ -56,12 +56,12 @@ export class ManageUserComponent implements OnInit {
       status: status.toString(),
       id: id,
     };
-    console.log("ststues data:",data);
+    // console.log("ststues data:",data);
     
 
     this.userService.updateStatus_API(data).subscribe(
       (resp: any) => {
-        console.log("status success");
+        // console.log("status success");
         
         this.ngxService.stop();
         this.responseMessage = resp?.message;
@@ -69,7 +69,7 @@ export class ManageUserComponent implements OnInit {
       },
       (error) => {
 
-        console.log("status error");
+        // console.log("status error");
         this.ngxService.stop();
         if (error.error?.message) {
           this.responseMessage = error.error?.message;
