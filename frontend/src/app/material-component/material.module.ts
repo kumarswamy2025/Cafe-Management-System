@@ -12,6 +12,8 @@ import { MaterialModule } from '../shared/material-module';
 import { ViewBillProductsComponent } from './dialog/view-bill-products/view-bill-products.component';
 import { ConformationComponent } from './dialog/conformation/conformation.component';
 import { ChangePasswordComponent } from './dialog/change-password/change-password.component';
+import { ManageCategoryComponent } from './manage-category/manage-category.component';
+import { CategoryComponent } from './dialog/category/category.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { ChangePasswordComponent } from './dialog/change-password/change-passwor
   declarations: [
     ViewBillProductsComponent,
     ConformationComponent,
-    ChangePasswordComponent    
+    ChangePasswordComponent,
+    ManageCategoryComponent,
+    CategoryComponent    
   ]
 })
 export class MaterialComponentsModule {}

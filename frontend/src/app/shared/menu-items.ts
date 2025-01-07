@@ -15,6 +15,13 @@ const MENUITEMS=[
         icon:"dashboard",
         // Note: dashboard is common for user and admin so leave it blank 
         role:''
+    },
+    {
+        state:'category',
+        name:"Manage Category",
+        icon:"category",
+        // Note: category is only for admins  
+        role:'admin'
     }
 ]
 

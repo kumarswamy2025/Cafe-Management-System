@@ -19,15 +19,13 @@ export class CategoryService {
   }
   // update category service
   updateCategory(data: any) {
-    return this.http.post(this.category_API.updateCategory.API, data, {
+    return this.http.patch(this.category_API.updateCategory.API, data, {
       headers: new HttpHeaders().set('content-type', 'application/json')
     })
   }
   // get category service
-  getCategory(data: any) {
-    return this.http.post(this.category_API.getCategory.API, data, {
-      headers: new HttpHeaders().set('content-type', 'application/json')
-    })
+  getCategory() {
+    return this.http.get(this.category_API.getCategory.API)
 
   }
 
