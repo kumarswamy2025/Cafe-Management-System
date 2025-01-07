@@ -2,7 +2,7 @@
 const connectDB = require('../../connectDB');
 async function GettingAllUserController(req,res) {
     try {
-        const getAllUserQuery="select name,email,status,role from user where role='user'"
+        const getAllUserQuery="select id, name,email,status,role,contactnumber from user where role='user' or role='admin'"
 
         
 
