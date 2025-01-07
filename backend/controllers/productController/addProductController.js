@@ -28,7 +28,7 @@ async function addProductController(req,res) {
         
 
        
-        const addProductQuery="insert into product  (name,categoryId,description,price,status)  values(?,?,?,?,'true')"
+        const addProductQuery="insert into product  (name,categoryId,description,price,status)  values(?,?,?,?,'false')"
         connectDB.query(addProductQuery,[productData.name,productData.categoryId,productData.description,productData.price],(addProductQueryError,addProductQueryResult)=>{
 
             if(!addProductQueryError){

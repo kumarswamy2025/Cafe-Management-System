@@ -20,7 +20,7 @@ async function generateBillController(req, res) {
           * this body contains 6 fields 
           * 1. name
           * 2. email
-          * 3. contactNumber
+          * 3. contactnumber
           * 4. paymentMethod
           * 5. total
           * 6. productDetails
@@ -35,7 +35,7 @@ async function generateBillController(req, res) {
         // query to save order details in bill table 
         let saveOrderDetailsQuery = "insert into bill (name, uuid, email, contactnumber, paymentMethod, total, productDetails, createdBy) values(?,?,?,?,?,?,?,?)";
         connectDB.query(saveOrderDetailsQuery, [orderDetails.name,
-            generatedUUID,
+        generatedUUID,
         orderDetails.email,
         orderDetails.contactnumber,
         orderDetails.paymentMethod,
