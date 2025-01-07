@@ -40,6 +40,18 @@ export var Apis = {
             API: `${domain}dashboard/dashboardDetails`
         }
 
+    },
+    category_API:{
+        addCategory:{
+            API:`${domain}category/addCategory`
+        },
+        getCategory:{
+            API:`${domain}category/getAllCategory`
+        },
+        updateCategory:{
+            API:`${domain}category/updateCategory`
+        }
+
     }
 
 
