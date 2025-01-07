@@ -55,6 +55,19 @@ export class UserService {
 
   }
 
+  allUsers_API(){
+    return this.http.get(this.user_API.allUsers_API.API)
+
+  }
+  updateStatus_API(data:any){
+    return this.http.patch(this.user_API.updateStatus_API.API,data,{
+
+      headers:new HttpHeaders().set('content-type','application/json')
+
+    })
+
+  }
+
 
 
 }

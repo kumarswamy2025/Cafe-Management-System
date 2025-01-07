@@ -44,6 +44,13 @@ const MENUITEMS=[
   
         role:''
     },
+    {
+        state:'user',
+        name:"View Users",
+        icon:"people",
+  
+        role:''
+    },
     
 ]
 

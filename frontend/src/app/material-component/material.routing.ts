@@ -5,6 +5,7 @@ import { RouterGuadeService } from '../services/routerGuard/router-guade.service
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
 import { ViewBillComponent } from './view-bill/view-bill.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
 
@@ -42,6 +43,16 @@ export const MaterialRoutes: Routes = [
     {
         path:'bill',
         component:ViewBillComponent,
+        canActivate:[RouterGuadeService],
+        data:{
+            expectedRole:['admin','user']
+
+        }
+
+    },
+    {
+        path:'user',
+        component:ManageUserComponent,
         canActivate:[RouterGuadeService],
         data:{
             expectedRole:['admin','user']
