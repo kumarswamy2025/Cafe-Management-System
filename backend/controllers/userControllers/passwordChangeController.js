@@ -24,7 +24,7 @@ async function passwordChangeController(req,res) {
             if(!checkingOldPasswordError){
                 // checking if old password is correct or not 
                 if(checkingOldPasswordResult.length<=0){
-                    return res.status(400).json({
+                    return res.status(401).json({
                         message:"incorrect old password",
                         success:false,
                         error:true
