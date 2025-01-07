@@ -57,8 +57,10 @@ export class ConformationComponent implements OnInit {
     }
   }
 
-  handleChangeAction(){
-    this.onEmitStatusChange.emit()
+  handleChangeAction(kumar:boolean){
+   this.onEmitStatusChange.emit(kumar)
+  // console.log("this is conformation componetnt..",data);
+  
   }
 
 }
