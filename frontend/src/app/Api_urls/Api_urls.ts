@@ -52,6 +52,31 @@ export var Apis = {
             API:`${domain}category/updateCategory`
         }
 
+    },
+
+    product_API:{
+        addProduct:{
+            API:`${domain}product/addProduct`
+        },
+        getProduct:{
+            API:`${domain}product/getProduct`
+        },
+        getProductsByCategoryId:{
+            API:`${domain}product/getProductsByCategoryId/`
+        },
+        getProductsByProductId:{
+            API:`${domain}product/getProductsByProductId`
+        },
+        updateProduct:{
+            API:`${domain}product/updateProduct`
+        },
+        deleteProduct:{
+            API:`${domain}product/deleteProduct/`
+        },
+        updateStatus:{
+            API:`${domain}product/updateStatus`
+        }
+
     }
 
 
