@@ -1,27 +1,28 @@
-# Frontend
+# Cafe Management System - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+This is the frontend part of the Cafe Management System project, developed using Angular. It provides the user interface for managing orders, inventory, employees, and more.
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- **Angular**: UI framework for building the frontend
+- **Angular Material**: A UI component library following Material Design guidelines
+- **ngx-ui-loader**: Display loading indicators during asynchronous operations
+- **Snackbar**: For showing short messages or notifications
+- **RxJS**: For reactive programming and handling asynchronous operations
+- **HttpClient**: For making API requests
 
-## Code scaffolding
+## Folder Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+frontend/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/           # All the reusable components
+│   │   ├── services/             # HTTP services for API calls
+│   │   ├── modules/              # Feature-specific modules
+│   │   ├── app.component.ts      # Main app component
+│   │   ├── app.module.ts         # Main app module
+│   │   └── app-routing.module.ts # Routing module
+│   └── assets/                   # Static assets like images
+└── angular.json                  # Angular project configuration
