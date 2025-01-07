@@ -65,7 +65,7 @@ export var Apis = {
             API:`${domain}product/getProductsByCategoryId/`
         },
         getProductsByProductId:{
-            API:`${domain}product/getProductsByProductId`
+            API:`${domain}product/getProductsByProductId/`
         },
         updateProduct:{
             API:`${domain}product/updateProduct`

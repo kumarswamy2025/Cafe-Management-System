@@ -30,6 +30,13 @@ const MENUITEMS=[
         // Note: category is only for admins  
         role:'admin'
     },
+    {
+        state:'order',
+        name:"Manage Order",
+        icon:"list_alt",
+  
+        role:''
+    },
 ]
 
 /**
