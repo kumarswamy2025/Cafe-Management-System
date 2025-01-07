@@ -77,6 +77,25 @@ export var Apis = {
             API:`${domain}product/updateStatus`
         }
 
+    },
+    bill_API:{
+        generateBillPDF:{
+            API:`${domain}bill/generateBillPDF`
+        },
+        getPdf:{
+            API:`${domain}bill/getPdf`
+        },
+        
+        getAllBills:{
+            API:`${domain}bill/getAllBills`
+        },
+        deleteBill:{
+            API:`${domain}bill/deleteBill/`
+        },
+        viewBill:{
+            API:`${domain}bill/viewBill/`
+        },
+
     }
 
 
