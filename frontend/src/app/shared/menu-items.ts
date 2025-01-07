@@ -22,7 +22,14 @@ const MENUITEMS=[
         icon:"category",
         // Note: category is only for admins  
         role:'admin'
-    }
+    },
+    {
+        state:'product',
+        name:"Manage Product",
+        icon:"inventory_2",
+        // Note: category is only for admins  
+        role:'admin'
+    },
 ]
 
 /**
