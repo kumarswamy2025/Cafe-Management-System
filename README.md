@@ -102,7 +102,7 @@ The `package.json` file manages the dependencies, scripts, and configurations fo
 
 1. clone git repo:
    ```bash
-   git clone <repourl>
+   git clone https://github.com/kumarswamy2025/Cafe-Management-System.git
    ```
 2. Navigate to the frontend folder:
    ```bash
