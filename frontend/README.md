@@ -96,7 +96,7 @@ The `package.json` file manages the dependencies, scripts, and configurations fo
 ---
 
 ## How to Run the Project
-1. Navigate to the backend folder:
+1. Navigate to the frontend folder:
    ```bash
    cd frontend
    ```
